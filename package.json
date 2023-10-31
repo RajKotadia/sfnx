@@ -1,0 +1,25 @@
+{
+	"name": "sfnx",
+	"version": "0.0.1",
+	"description": "A CLI tool to execute AWS Step Functions locally",
+	"main": "build/index.js",
+	"type": "module",
+	"scripts": {
+		"build": "tsc"
+	},
+	"keywords": [
+		"CLI",
+		"AWS",
+		"Step Functions",
+		"State Machines"
+	],
+	"author": "Raj Kotadia",
+	"license": "MIT",
+	"devDependencies": {
+		"@types/node": "^20.8.10",
+		"typescript": "^5.2.2"
+	},
+	"engines": {
+		"node": ">=14"
+	}
+}
