@@ -1,0 +1,51 @@
+{
+	"name": "sfnx",
+	"version": "0.0.1",
+	"description": "A CLI tool to execute AWS Step Functions locally",
+	"author": "Raj Kotadia",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/RajKotadia/sfnx.git"
+	},
+	"homepage": "https://github.com/RajKotadia/sfnx",
+	"bugs": {
+		"url": "https://github.com/RajKotadia/sfnx/issues"
+	},
+	"keywords": [
+		"cli",
+		"aws",
+		"step-functions",
+		"state-machines"
+	],
+	"main": "build/index.js",
+	"type": "module",
+	"engines": {
+		"node": ">=14"
+	},
+	"scripts": {
+		"prepare": "husky install",
+		"build": "tsc",
+		"lint": "eslint --fix",
+		"format": "prettier --write"
+	},
+	"lint-staged": {
+		"*.ts": [
+			"npm run lint",
+			"npm run format"
+		],
+		"*.{json,md}": "npm run format"
+	},
+	"devDependencies": {
+		"@types/node": "^20.8.10",
+		"@typescript-eslint/eslint-plugin": "^6.9.1",
+		"@typescript-eslint/parser": "^6.9.1",
+		"eslint": "^8.52.0",
+		"eslint-config-prettier": "^9.0.0",
+		"eslint-plugin-simple-import-sort": "^10.0.0",
+		"husky": "^8.0.3",
+		"lint-staged": "^15.0.2",
+		"prettier": "^3.0.3",
+		"typescript": "^5.2.2"
+	}
+}
