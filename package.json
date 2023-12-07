@@ -18,14 +18,15 @@
 		"step-functions",
 		"state-machines"
 	],
-	"main": "build/index.js",
-	"type": "module",
+	"main": "build/src/index.js",
 	"engines": {
 		"node": ">=14"
 	},
+	"bin": "./build/src/index.js",
 	"scripts": {
 		"prepare": "husky install",
 		"build": "tsc",
+		"build:watch": "tsc --watch",
 		"lint": "eslint --fix",
 		"format": "prettier --write"
 	},
@@ -47,5 +48,8 @@
 		"lint-staged": "^15.0.2",
 		"prettier": "^3.0.3",
 		"typescript": "^5.2.2"
+	},
+	"dependencies": {
+		"commander": "^11.1.0"
 	}
 }
