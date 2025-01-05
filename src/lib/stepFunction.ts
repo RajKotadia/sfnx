@@ -107,7 +107,7 @@ export class StepFunctionController {
 		try {
 			console.log('>> Creating the StateMachine');
 			const { stateMachineArn } = await this.createStateMachine(
-				'StateMachine1234',
+				'StateMachine',
 				aslDefinitionPath
 			);
 
