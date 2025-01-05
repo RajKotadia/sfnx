@@ -38,6 +38,7 @@
 		"*.{json,md}": "npm run format"
 	},
 	"devDependencies": {
+		"@types/dockerode": "^3.3.23",
 		"@types/node": "^20.8.10",
 		"@typescript-eslint/eslint-plugin": "^6.9.1",
 		"@typescript-eslint/parser": "^6.9.1",
@@ -50,6 +51,8 @@
 		"typescript": "^5.2.2"
 	},
 	"dependencies": {
-		"commander": "^11.1.0"
+		"@aws-sdk/client-sfn": "^3.507.0",
+		"commander": "^11.1.0",
+		"dockerode": "^4.0.2"
 	}
 }

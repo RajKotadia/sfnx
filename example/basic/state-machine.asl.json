@@ -1,0 +1,14 @@
+{
+	"Comment": "A simple basic step function",
+	"StartAt": "Step1",
+	"States": {
+		"Step1": {
+			"Type": "Pass",
+			"Result": {
+				"message": "The output from the state machine"
+			},
+			"ResultPath": "$.output",
+			"End": true
+		}
+	}
+}
