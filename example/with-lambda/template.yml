@@ -1,0 +1,48 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: Template for state-machine
+
+Resources:
+    ApiGateway:
+        Type: AWS::Serverless::Api
+        Properties:
+            StageName: local
+
+    LambdaApi:
+        Type: AWS::Serverless::Function
+        Properties:
+            Runtime: nodejs20.x
+            Timeout: 29
+            MemorySize: 1024
+            CodeUri: ./
+            Handler: lambda.apiHandler
+            FunctionName: 'LambdaApi'
+            Events:
+                APIEvent:
+                    Type: Api
+                    Properties:
+                        Method: GET
+                        Path: /hello
+                        RestApiId:
+                            Ref: ApiGateway
+
+    LambdaStep:
+        Type: AWS::Serverless::Function
+        Properties:
+            Runtime: nodejs20.x
+            Timeout: 30
+            MemorySize: 1024
+            CodeUri: ./
+            Handler: lambda.stepHandler
+            FunctionName: 'LambdaStep'
+
+    StateMachine:
+        Type: AWS::Serverless::StateMachine
+        Properties:
+            Name: 'StateMachineWithLambda'
+            DefinitionUri: ./state-machine.asl.json
+            Logging:
+                IncludeExecutionData: true
+                Level: ALL
+            DefinitionSubstitutions:
+                LambdaStep: !GetAtt LambdaStep.Arn

@@ -3,3 +3,6 @@ node_modules/
 
 # Typescript output
 build/
+
+# example builds
+example/**/.aws-sam
